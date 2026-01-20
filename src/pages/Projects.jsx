@@ -3,11 +3,95 @@ import { Helmet } from 'react-helmet';
 import { motion } from 'framer-motion';
 import { ExternalLink, Code2, Lock } from 'lucide-react';
 import { Button } from '../components/ui/button';
+import fomoImg from '../assets/fomo.png';
+import koinpr from '../assets/koinpr.png';
+import ecomadmin from '../assets/ecomadmin.png';
+import unibazar from '../assets/unibazar.png';
 
 const Projects = () => {
   const [filter, setFilter] = useState('All');
 
   const projects = [
+    {
+      title: 'FOMO3D – Blockchain Game',
+      category: 'Web3 / Blockchain',
+      badge: 'Blockchain',
+      image: fomoImg, // place your image here
+      metrics: ['Decentralized on-chain game mechanics'],
+      problem:
+        'Traditional online games lack transparency and trust in reward distribution.',
+      solution:
+        'Developed a blockchain-based game implementing decentralized mechanics, smart-contract driven rewards, and real-time gameplay.',
+      tech: [
+        'React',
+        'Blockchain',
+        'Web3',
+        'Smart Contracts',
+        'Vercel'
+      ],
+      liveUrl: 'https://demofomo3d-8s2ilxf5s-amankumarsuman.vercel.app/',
+      repoUrl: 'https://github.com/amankumarsuman/fomo3D'
+    },
+    {
+      title: 'KoinPR – PR Management Platform',
+      category: 'SaaS',
+      badge: 'NDA / Enterprise',
+      image: koinpr, // place your image here
+      metrics: ['Used by crypto & Web3 brands globally'],
+      problem:
+        'Crypto startups needed a streamlined way to manage PR campaigns, journalists, and outreach without manual workflows.',
+      solution:
+        'Built a scalable PR management platform enabling Web3 companies to manage campaigns, media outreach, and analytics efficiently.',
+      tech: [
+        'React',
+        'Next.js',
+        'Node.js',
+        'SaaS Architecture'
+      ],
+      liveUrl: 'https://www.koinpr.com/',
+      repoUrl: null // NDA protected
+    },
+    {
+      title: 'UniBazar – Seller Management Platform',
+      category: 'SaaS',
+      badge: 'Startup / E-commerce',
+      image: unibazar, // place your image here
+      metrics: ['Unified selling across Amazon, Flipkart, Myntra & more'],
+      problem:
+        'Online sellers faced operational chaos managing inventory, orders, and pricing separately across multiple marketplaces.',
+      solution:
+        'Developed a unified seller platform allowing merchants to link multiple marketplaces and manage inventory, orders, and operations from one place.',
+      tech: [
+        'React',
+        'Redux',
+        'REST APIs',
+        'E-commerce Integrations',
+        'Tailwind CSS'
+      ],
+      liveUrl: 'https://unibazar.in/',
+      repoUrl: 'https://github.com/Unibazar/frontend-react'
+    },
+    {
+      title: 'Multi-Commerce Admin Portal',
+      category: 'Web Apps',
+      badge: 'Enterprise',
+      image: ecomadmin, // place your image here
+      metrics: ['Manage 5+ marketplaces from one dashboard'],
+      problem:
+        'Businesses selling on multiple e-commerce platforms struggled to track orders, inventory, and analytics across different dashboards.',
+      solution:
+        'Built a centralized admin portal where users can connect multiple e-commerce platforms and manage inventory, orders, and insights from a single interface.',
+      tech: [
+        'React',
+        'Redux',
+        'Node.js',
+        'REST APIs',
+        'Material UI',
+        'Vercel'
+      ],
+      liveUrl: 'https://multicommerce-git-main-amankumarsumans-projects.vercel.app/login',
+      repoUrl: 'https://github.com/amankumarsuman/multicommerce'
+    },
     {
       title: 'E-commerce Platform',
       category: 'Web Apps',
@@ -19,8 +103,8 @@ const Projects = () => {
       tech: ['React', 'Node.js', 'MongoDB', 'Socket.io'],
       badges: ['Production', 'Scalable'],
       metrics: ['50K+ Users', '99.9% Uptime'],
-      liveUrl: 'https://example-ecommerce.com',
-      repoUrl: 'https://github.com/yourusername/ecommerce-platform',
+      liveUrl: '',
+      repoUrl: 'https://github.com/amankumarsuman/ecommerce-platform',
     },
 
     {
@@ -95,7 +179,7 @@ const Projects = () => {
     },
   ];
 
-  const categories = ['All', 'Web Apps', 'SaaS'];
+  const categories = ['All', 'Web Apps', 'SaaS','Web3 / Blockchain'];
 
   const filteredProjects =
     filter === 'All'
