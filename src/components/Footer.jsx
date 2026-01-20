@@ -18,7 +18,7 @@ const Footer = () => {
   const socialLinks = [
     { icon: Github, href: 'https://github.com/amankumarsuman', label: 'GitHub' },
     { icon: Linkedin, href: 'https://linkedin.com/in/aman-kumar-b683b614b', label: 'LinkedIn' },
-    { icon: Twitter, href: 'https://twitter.com/amankumar', label: 'Twitter' },
+    { icon: Twitter, href: 'https://twitter.com/ssjha143', label: 'Twitter' },
     { icon: Mail, href: 'mailto:amankumar.dev98@gmail.com', label: 'Email' },
   ];
 
