@@ -10,6 +10,7 @@ import Services from '../src/pages/Services';
 import Skills from '../src/pages/Skills';
 import Projects from '../src/pages/Projects';
 import Contact from '../src/pages/Contact';
+import WhatsappFloatingButton from './components/WhatsappFloatingButton';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
         </Routes>
         <Footer />
         <Toaster />
+         <WhatsappFloatingButton />
       </div>
     </Router>
   );
