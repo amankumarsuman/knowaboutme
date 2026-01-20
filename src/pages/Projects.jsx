@@ -13,40 +13,89 @@ const Projects = () => {
       category: 'Web Apps',
       image: 'https://images.unsplash.com/photo-1557821552-17105176677c',
       problem:
-        'Complex inventory management and real-time stock updates across multiple warehouses',
+        'Complex inventory management and real-time stock updates across multiple warehouses.',
       solution:
-        'Built scalable React app with real-time updates, automated inventory tracking, and multi-warehouse management',
+        'Built a scalable React-based platform with real-time updates, automated inventory tracking, and multi-warehouse support.',
       tech: ['React', 'Node.js', 'MongoDB', 'Socket.io'],
+      badges: ['Production', 'Scalable'],
+      metrics: ['50K+ Users', '99.9% Uptime'],
       liveUrl: 'https://example-ecommerce.com',
       repoUrl: 'https://github.com/yourusername/ecommerce-platform',
     },
+
     {
-      title: 'SaaS Admin Dashboard',
+      title: 'Labgen Physician Portal',
       category: 'SaaS',
-      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71',
+      image: 'https://verisys.com/wp-content/uploads/2022/01/Medical-Credentialing-101.jpg',
+      badges: ['Healthcare', 'Enterprise', 'NDA'],
+      metrics: [
+        '100+ Physicians',
+        'Active in USA & UK',
+        'HIPAA-Compliant',
+      ],
       problem:
-        'Manual data management and lack of real-time analytics for business decisions',
+        'Physicians lacked a secure and unified platform to access lab reports and patient insights.',
       solution:
-        'Created intuitive dashboard with interactive charts, real-time data sync, and custom reporting',
-      tech: ['Next.js', 'TypeScript', 'PostgreSQL', 'Chart.js'],
-      liveUrl: 'https://example-saas.com',
-      repoUrl: 'https://github.com/yourusername/saas-dashboard',
+        'Developed a secure, role-based physician portal enabling real-time access to reports, analytics, and patient history.',
+      tech: [
+        'React',
+        'Redux',
+        'Material UI',
+        'shadcn/ui',
+        'Monorepo Architecture',
+      ],
+      liveUrl: null,
+      repoUrl: null,
     },
+
     {
-      title: 'Grocery Delivery App',
+      title: 'Laboratory Information System (LIS)',
+      category: 'SaaS',
+      image: 'https://www.isotekindo.co.id/assets/upload/lg/untuk-artikel-narkoba-3-434b4.png',
+      badges: ['Healthcare', 'Enterprise', 'NDA'],
+      metrics: [
+        '10K+ Reports / Day',
+        'Multi-Lab Workflow',
+        'Physician Integration',
+      ],
+      problem:
+        'Labs needed a centralized system to manage samples, workflows, reporting, and compliance.',
+      solution:
+        'Built an end-to-end LIS to manage lab operations, reporting lifecycle, and physician integrations at scale.',
+      tech: [
+        'React',
+        'Redux',
+        'Material UI',
+        'shadcn/ui',
+        'Monorepo Architecture',
+      ],
+      liveUrl: null,
+      repoUrl: null,
+    },
+
+    {
+      title: 'Grocery Delivery Platform',
       category: 'Web Apps',
       image: 'https://images.unsplash.com/photo-1542838132-92c53300491e',
+      badges: ['Logistics', 'Real-Time'],
+      metrics: ['Live Tracking', 'Multi-Vendor'],
       problem:
-        'Fragmented delivery system with poor route optimization and customer tracking',
+        'Fragmented delivery system with poor route optimization and customer tracking.',
       solution:
-        'Built end-to-end delivery platform with real-time tracking, route optimization, and multi-vendor support',
-      tech: ['React Native', 'Node.js', 'Firebase', 'Google Maps API'],
-      liveUrl: 'https://example-grocery.com',
-      repoUrl: null, // 🔒 Private / NDA project
+        'Developed a real-time delivery platform with route optimization, vendor dashboards, and order tracking.',
+      tech: [
+        'React',
+        'Node.js',
+        'Firebase',
+        'Google Maps API',
+        'MUI',
+      ],
+      liveUrl: 'https://dehatmall.in',
+      repoUrl: null,
     },
   ];
 
-  const categories = ['All', 'Web Apps', 'SaaS', 'AI'];
+  const categories = ['All', 'Web Apps', 'SaaS'];
 
   const filteredProjects =
     filter === 'All'
@@ -56,21 +105,21 @@ const Projects = () => {
   return (
     <>
       <Helmet>
-        <title>Projects & Portfolio - Aman Kumar</title>
+        <title>Projects & Portfolio | Aman Kumar</title>
         <meta
           name="description"
-          content="Explore Aman Kumar's portfolio of web applications, SaaS dashboards, and scalable platforms."
+          content="Explore real-world projects by Aman Kumar including SaaS platforms, healthcare systems, enterprise dashboards, and scalable web applications."
         />
       </Helmet>
 
-      <section className="pt-32 pb-12 bg-slate-950">
+      <section className="pt-32 pb-16 bg-slate-950">
         <div className="container mx-auto px-4">
           {/* Header */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-center max-w-3xl mx-auto mb-12"
+            className="text-center max-w-3xl mx-auto mb-14"
           >
             <h1 className="text-5xl md:text-6xl font-bold mb-6">
               My{' '}
@@ -79,12 +128,12 @@ const Projects = () => {
               </span>
             </h1>
             <p className="text-xl text-gray-300">
-              Real-world solutions that drive business results
+              Production-grade solutions solving real business problems
             </p>
           </motion.div>
 
           {/* Filters */}
-          <div className="flex flex-wrap justify-center gap-4 mb-12">
+          <div className="flex flex-wrap justify-center gap-4 mb-14">
             {categories.map((category) => (
               <Button
                 key={category}
@@ -101,8 +150,8 @@ const Projects = () => {
             ))}
           </div>
 
-          {/* Projects */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {/* Projects Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
             {filteredProjects.map((project, index) => (
               <motion.div
                 key={index}
@@ -127,9 +176,21 @@ const Projects = () => {
 
                 {/* Content */}
                 <div className="p-8">
-                  <h3 className="text-2xl font-semibold mb-4">
+                  <h3 className="text-2xl font-semibold mb-3">
                     {project.title}
                   </h3>
+
+                  {/* Badges */}
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {project.badges?.map((badge, i) => (
+                      <span
+                        key={i}
+                        className="text-xs px-3 py-1 rounded-full bg-gradient-to-r from-purple-500/20 to-pink-500/20 text-purple-300 border border-purple-500/30"
+                      >
+                        {badge}
+                      </span>
+                    ))}
+                  </div>
 
                   <p className="text-gray-400 mb-3">
                     <span className="text-purple-400 font-semibold">
@@ -145,7 +206,21 @@ const Projects = () => {
                     {project.solution}
                   </p>
 
-                  {/* Tech */}
+                  {/* Metrics */}
+                  {project.metrics && (
+                    <div className="grid grid-cols-2 gap-3 mb-6">
+                      {project.metrics.map((metric, i) => (
+                        <div
+                          key={i}
+                          className="bg-slate-800/60 border border-purple-500/20 rounded-lg px-4 py-3 text-sm text-purple-300 text-center"
+                        >
+                          {metric}
+                        </div>
+                      ))}
+                    </div>
+                  )}
+
+                  {/* Tech Stack */}
                   <div className="flex flex-wrap gap-2 mb-6">
                     {project.tech.map((t, i) => (
                       <span
